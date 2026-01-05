@@ -27,7 +27,7 @@ export const Overlay = () => {
   return (
     <>
       <div
-        className={`fixed z-10 top-0 left-0 bottom-0 right-0 flex flex-col justify-between pointer-events-none text-black ${
+        className={`fixed z-10 top-0 left-0 bottom-0 right-0 flex flex-col justify-between pointer-events-none text-black dark:text-white ${
           visible ? "" : "opacity-0"
         } transition-opacity duration-1000`}
       >
@@ -36,13 +36,13 @@ export const Overlay = () => {
               <circle cx="15" cy="20" r="10" stroke="#0682ff"/>
               <circle cx="15" cy="20" r="6" stroke="#0682ff" strokeWidth="3"/>
           </svg>    
-          <span className="text-2xl text-primary-700 font-bold mt-1.5">GoldenCity</span>             
+          <span className="text-2xl text-primary-700 dark:text-primary-400 font-bold mt-1.5">GoldenCity</span>             
         </Link>
-        <div className="bg-gradient-to-t from-white/90 pt-20 pb-10 p-4 flex items-center flex-col text-center">
+        <div className="bg-gradient-to-t from-white/90 dark:from-secondary-900/95 pt-20 pb-10 p-4 flex items-center flex-col text-center transition-colors">
           <h1 className="text-2xl lg:text-5xl font-extrabold">
             {scenes[displaySlide].name}
           </h1>
-          <p className="text-xs lg:text-sm text-opacity-60 italic">
+          <p className="text-xs lg:text-sm text-opacity-60 dark:text-secondary-300 italic">
             {scenes[displaySlide].description}
           </p>
           <div className="flex items-center gap-12 mt-4">
@@ -52,7 +52,7 @@ export const Overlay = () => {
                   {scenes[displaySlide].targetProfitability} %
                 </p>
               </div>
-              <p className="text-xs opacity-80">Total Return</p>
+              <p className="text-xs opacity-80 dark:text-secondary-400">Total Return</p>
             </div>
             <div className="flex flex-col items-center">
               <div className="flex items-center gap-2">
@@ -60,7 +60,7 @@ export const Overlay = () => {
                   {scenes[displaySlide].roi} %
                 </p>
               </div>
-              <p className="text-xs opacity-80">ROI</p>
+              <p className="text-xs opacity-80 dark:text-secondary-400">ROI</p>
             </div>
             <div className="flex flex-col items-center">
               <div className="flex gap-2 items-center">
@@ -68,7 +68,7 @@ export const Overlay = () => {
                   {scenes[displaySlide].valuation.toLocaleString()}
                 </p>
               </div>
-              <p className="text-xs opacity-80">Valuation</p>
+              <p className="text-xs opacity-80 dark:text-secondary-400">Valuation</p>
             </div>
           </div>
           <button className="btn w-full lg:w-1/2 mt-6 flex items-center justify-center text-xl">

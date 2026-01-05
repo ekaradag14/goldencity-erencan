@@ -11,11 +11,15 @@ import Privacy from './pages/Privacy';
 import Blog from './pages/Blog';
 import BlogPost from './pages/BlogPost';
 import NotFound from './pages/NotFound';
+import { useThemeEffect } from './hooks/useThemeEffect';
 
 function App() {
+  // Initialize theme effect to apply dark/light mode
+  useThemeEffect();
+
   return (
     <Router>
-      <div className="min-h-screen flex flex-col">
+      <div className="min-h-screen flex flex-col bg-secondary-50 dark:bg-secondary-900 transition-colors">
         <Navbar />
         <main className="flex-grow">
           <Routes>

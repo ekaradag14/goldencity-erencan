@@ -49,7 +49,7 @@ function BlogPost() {
   };
 
   return (
-    <div className="min-h-screen bg-secondary-50">
+    <div className="min-h-screen bg-secondary-50 dark:bg-secondary-900 transition-colors">
       {/* Hero Section */}
       <div className="relative h-[400px]">
         <img
@@ -57,7 +57,7 @@ function BlogPost() {
           alt={post.title}
           className="w-full h-full object-cover"
         />
-        <div className="absolute inset-0 bg-black bg-opacity-50" />
+        <div className="absolute inset-0 bg-black bg-opacity-50 dark:bg-opacity-70" />
         <div className="absolute inset-0 flex items-center">
           <div className="container">
             <motion.div
@@ -99,9 +99,9 @@ function BlogPost() {
             transition={{ delay: 0.2 }}
             className="lg:col-span-2"
           >
-            <div className="bg-white rounded-lg shadow-md p-8">
+            <div className="bg-white dark:bg-secondary-800 rounded-lg shadow-md dark:shadow-secondary-900/50 p-8 transition-colors">
               <div 
-                className="prose prose-lg max-w-none"
+                className="prose prose-lg max-w-none dark:prose-invert dark:text-secondary-200"
                 dangerouslySetInnerHTML={{ __html: post.content }}
               />
             </div>
@@ -115,27 +115,27 @@ function BlogPost() {
           >
             <div className="space-y-6">
               {/* Share */}
-              <div className="bg-white rounded-lg shadow-md p-6">
-                <h3 className="text-lg font-semibold mb-4 flex items-center">
+              <div className="bg-white dark:bg-secondary-800 rounded-lg shadow-md dark:shadow-secondary-900/50 p-6 transition-colors">
+                <h3 className="text-lg font-semibold mb-4 flex items-center dark:text-white">
                   <FiShare2 className="mr-2" />
                   Share this article
                 </h3>
                 <div className="flex space-x-4">
-                  <button className="p-2 rounded-full bg-blue-100 text-blue-600 hover:bg-blue-200">
+                  <button className="p-2 rounded-full bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 hover:bg-blue-200 dark:hover:bg-blue-900/50 transition-colors">
                     <FaFacebook size={20} />
                   </button>
-                  <button className="p-2 rounded-full bg-sky-100 text-sky-500 hover:bg-sky-200">
+                  <button className="p-2 rounded-full bg-sky-100 dark:bg-sky-900/30 text-sky-500 dark:text-sky-400 hover:bg-sky-200 dark:hover:bg-sky-900/50 transition-colors">
                     <FaTwitter size={20} />
                   </button>
-                  <button className="p-2 rounded-full bg-blue-100 text-blue-700 hover:bg-blue-200">
+                  <button className="p-2 rounded-full bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-400 hover:bg-blue-200 dark:hover:bg-blue-900/50 transition-colors">
                     <FaLinkedin size={20} />
                   </button>
                 </div>
               </div>
 
               {/* Tags */}
-              <div className="bg-white rounded-lg shadow-md p-6">
-                <h3 className="text-lg font-semibold mb-4 flex items-center">
+              <div className="bg-white dark:bg-secondary-800 rounded-lg shadow-md dark:shadow-secondary-900/50 p-6 transition-colors">
+                <h3 className="text-lg font-semibold mb-4 flex items-center dark:text-white">
                   <FiTag className="mr-2" />
                   Tags
                 </h3>
@@ -143,7 +143,7 @@ function BlogPost() {
                   {post.tags.map((tag, index) => (
                     <span
                       key={index}
-                      className="px-3 py-1 bg-secondary-100 text-secondary-600 rounded-full text-sm"
+                      className="px-3 py-1 bg-secondary-100 dark:bg-secondary-700 text-secondary-600 dark:text-secondary-300 rounded-full text-sm transition-colors"
                     >
                       {tag}
                     </span>
