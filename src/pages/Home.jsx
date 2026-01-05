@@ -320,7 +320,12 @@ function Home() {
               </motion.div>
 
               {/* Right side - Image */}
-              <div className="relative h-[500px]">
+              <motion.div 
+                className="relative h-[500px]"
+                initial={{ opacity: 0, x: 30 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.6, delay: 0.2 }}
+              >
                 <AnimatePresence>
                   <motion.img
                     key={theme}
@@ -333,7 +338,7 @@ function Home() {
                     transition={{ duration: 0.4 }}
                   />
                 </AnimatePresence>
-              </div>
+              </motion.div>
             </div>
           </div>
         </div>
